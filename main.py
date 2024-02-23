@@ -26,7 +26,7 @@ fname = config['raw']
 # COPY THE METADATA CHANNELS.TSV, COORDSYSTEM, ETC ==============================
 
 
-raw = mne.io.read_raw_fif(fname)
+raw = mne.io.read_raw_fif(fname, preload=True)
 raw.interpolate_bads()
 
 
