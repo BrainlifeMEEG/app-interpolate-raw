@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=01:10:00
-#PBS -l vmem=20G
+#PBS -l vmem=20gb
 
 #bl2bids
 
