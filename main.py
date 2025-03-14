@@ -21,7 +21,7 @@ with open(__location__+'/config.json') as config_json:
 
 # if there's a "tags" field in config.json, collect it in a list
 if 'tags' in config:
-    in_tags = config['tags']
+    tags = config['tags']
 
 fname = config['raw']
 
@@ -48,9 +48,9 @@ info = str(info)
 
 dict_json_product['brainlife'].append({'type': 'info', 'msg': info})
 
-# if in_tags is not empty, add it to the product.json
-if in_tags:
-    dict_json_product['tags'] = in_tags
+# if tags is not empty, add it to the product.json
+if 'tags' in locals():
+    dict_json_product['tags'] = tags
     
 
 with open('product.json', 'w') as outfile:
