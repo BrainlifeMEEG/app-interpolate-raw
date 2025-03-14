@@ -27,8 +27,23 @@ fname = config['raw']
 
 
 raw = mne.io.read_raw_fif(fname, preload=True)
+
+bads = raw.info['bads']
+
 raw.interpolate_bads()
 
 
 # save mne/epochs
 raw.save(os.path.join('out_dir','raw.fif'))
+
+dict_json_product = {'brainlife': []}
+
+
+# add a message to the product.json
+info = 'Interpolated bad channels: ' + str(bads)
+info = str(info)
+
+dict_json_product['brainlife'].append({'type': 'info', 'msg': info})
+with open('product.json', 'w') as outfile:
+    json.dump(dict_json_product, outfile)
+    
