@@ -37,7 +37,7 @@ raw.interpolate_bads()
 
 
 # save mne/epochs
-raw.save(os.path.join('out_dir','raw.fif'))
+raw.save(os.path.join('out_dir','raw.fif'), overwrite=True)
 
 dict_json_product = {'brainlife': []}
 
